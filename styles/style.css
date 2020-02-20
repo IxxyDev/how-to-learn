@@ -9,6 +9,23 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+div,
+header,
+span,
+footer {
+    border: 1px solid red;
+}
+
+
+/* так и не нашел способа убрать огромные отступы по вертикали у заголовков лучше, чем такой */
+h2,
+h3,
+h4 {
+    margin-top: 5px;  
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
 .header {
     display: flex; /* чтобы выровнять по центру header__title */
     height: 100vh;
@@ -26,7 +43,7 @@
     z-index: 1;
 }
 
-.logo__place-header {
+.logo_place_header {
     top: 30px;
     left: 64px;
 }
@@ -47,8 +64,8 @@
     font-size: 20px;
 }
 
-/* ниже font-weight без надобоности: в теге h1 текст полужирный по умолчанию */
-.header__title_text {
+/* ниже font-weight без надобоности: в теге h1 текст полужирный по умолчанию (в других подобных случаях не комментировал) */
+.header__title-text {
     line-height: 96px;
     font-size: 102px; 
 }
@@ -57,7 +74,6 @@
     width: 765px;
     height: 608px;
     position: absolute;
-
     background-size: cover;
     bottom: 0;
     right: 0;
@@ -75,10 +91,235 @@
     margin-top: 64px;
 }
 
+.two-columns {
+    margin: 100px auto 100px;
+    display: flex;
+    width: 80%;
+    min-width: 784px;
+    justify-content: space-between;
+}
+
+.two-columns__brief {
+    width: 175px;
+}
+
+.two-columns__main-text {
+    width: 80%;
+}
+
+.two-columns__paragraph {
+    line-height: 34px;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.two-columns__paragraph:last-of-type {
+    margin-bottom: 0;
+}
+
+.brief__text {
+    line-height: 120%;
+    font-size: 18px;
+    color:  #2f80ed;
+}
+
+.two-columns__span-accent {
+    font-weight: bold;
+}
+
+.table {
+    display: flex;
+    width: 1100px;
+    margin: auto;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 60px;
+}
+
+.section-title {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 69px;
+    font-size: 50px;
+}
+
+.section-subtitle {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    line-height: 34px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.table__cell {
+    width: 250px;
+    margin-top: 60px;
+}
+
+.table__heading {
+    line-height: 115%; 
+    font-size: 24px;
+}
+
+.table__text {
+    line-height: 120%;
+    font-size: 18px;
+}
+
+/* стойкое ощущение, что размеры в приложенном ТЗ у этого блока приведены неверные */
+.feinman {
+    position: relative;
+    margin: 100px auto 0;
+    min-height: 790px;
+    background-color: #f2f2f2;
+}
+
+.feinman__title {
+    position: relative; /* для z-index */
+    width: 648px;
+    margin: 100px auto 70px;
+    text-align: center;
+    font-size: 52px; /* в задании указан шрифт 120 пикселей, но на картинке, очевидно, совсем другой. Прикинул примерно */
+    text-align: center;
+    z-index: 1;
+}
+
+.feinman__subtitle {
+    position: relative; /* для z-index */
+    text-align: center;
+    line-height: 51px;;
+    font-size: 36px;
+    font-weight: normal;
+    z-index: 1;
+}
+
+.feinman__link {
+    position: absolute;
+    top: 50%;
+    right: 48px;
+    line-height: 51px;;
+    font-size: 36px;
+}
+
+.feynman-pic {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 867px;
+    height: 637px;
+    z-index: 0;
+}
+
+.kaufman {
+    position: relative;
+    background-color: black;
+    padding-top: 90px;
+    overflow: hidden;
+}
+
+.kaufman__triangle {
+    width: 777px;
+    height: 777px;
+    position: absolute;
+    top: 0;
+    right: -210px;
+    z-index: 0;
+    background-image: url(../images/triangle.svg);
+}
+
+.footer {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: #1f1f1f;
+}
+
+.footer__columns {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    color: white;
+    min-height: 250px;
+}
+
+.footer__columns_content_copyright {
+    flex-basis: 711px;
+    position: relative;
+}
+
+.footer__column-heading {
+    margin-bottom: 20px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.footer__author {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.footer__social-icon {
+    display: flex;
+    color: white;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.footer__social-icon-text {
+    line-height: 30px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer__social-icon-pic {
+    margin-right: 10px;
+}
+
+.section-title_theme_dark {
+    color: white;
+}
+
+.section-subtitle_theme_dark{
+    color: white;
+}
+
+.table_theme_dark {
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
 /* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
+    position: relative;
     width: 200px;
     color: white;
     margin-right: 0;
     margin-top: 80px;
+    z-index: 1;
+}
+
+.logo_place_footer {
+    height: 35px;
+}
+
+/* убираем маркеры у пунктов списка */
+.footer__links-list {
+    list-style-type: none;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+/* убираем образовавшиеся отступы */
+.footer__column-links {
+    margin-left: 0;
+    padding-left: 0;
 }
