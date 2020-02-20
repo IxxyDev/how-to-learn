@@ -9,12 +9,14 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/*
 div,
 header,
 span,
 footer {
     border: 1px solid red;
 }
+*/
 
 /* так и не нашел способа убрать огромные отступы по вертикали у заголовков лучше, чем такой */
 h2,
@@ -246,7 +248,6 @@ h4 {
     width: 90%;
     margin: auto;
     color: white;
-    min-height: 250px;
 }
 
 .footer__columns_content_copyright {
