@@ -8,25 +8,19 @@
     /* выше для экранов больше 1600px отцентрировали весь контент */
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-
 /*
 div,
 header,
 span,
-footer {
+footer,
+h1,
+h2,
+h3,
+h4,
+p {
     border: 1px solid red;
 }
 */
-
-/* так и не нашел способа убрать огромные отступы по вертикали у заголовков лучше, чем такой */
-h2,
-h3,
-h4 {
-    margin-top: 5px;  
-    margin-bottom: 5px;
-    margin-left: 2px;
-}
-
 .header {
     display: flex; /* чтобы выровнять по центру header__title */
     height: 100vh;
@@ -34,20 +28,19 @@ h4 {
     max-height: 756px;
     background-color: #f2f2f2;
     position: relative; /* это для последующего задания расположения дочерних блоков */
-
-    /* выше установили ограничения для секции */
+    overflow: hidden;
 }
 
 .logo {
     width: 183px;
     height: 32px;
-    position: absolute;
     z-index: 1;
 }
 
 .logo_place_header {
     top: 30px;
     left: 64px;
+    position: absolute;
 }
 
 .header__title {
@@ -55,6 +48,8 @@ h4 {
     display: flex;
     align-self: center;
     margin-left: 64px;
+    line-height: 96px;
+    font-size: 102px; 
 }
 
 .header__subtitle {
@@ -66,11 +61,15 @@ h4 {
     font-size: 20px;
 }
 
-/* ниже font-weight без надобоности: в теге h1 текст полужирный по умолчанию (в других подобных случаях не комментировал) */
-.header__title-text {
-    line-height: 96px;
-    font-size: 102px; 
+.header__link {
+    text-decoration: none;
+    color:#2f80ed;
 }
+
+.header__link:hover {
+    opacity: .5;
+}
+
 
 .header__main-illustration {
     width: 765px;
@@ -103,6 +102,8 @@ h4 {
 
 .two-columns__brief {
     width: 175px;
+    color: #2f80ed;
+    font-weight: normal;
 }
 
 .two-columns__main-text {
@@ -122,7 +123,7 @@ h4 {
 .brief__text {
     line-height: 120%;
     font-size: 18px;
-    color:  #2f80ed;
+    color: #2f80ed;
 }
 
 .two-columns__span-accent {
@@ -187,7 +188,7 @@ h4 {
     width: 648px;
     margin-bottom: 70px;
     text-align: center;
-    font-size: 52px;   /* в задании указан шрифт 120 пикселей, но на картинке, очевидно, совсем другой. Прикинул примерно */
+    font-size: 120px; 
     text-align: center;
     z-index: 1;
 }
@@ -208,9 +209,15 @@ h4 {
     right: 48px;
     line-height: 51px;;
     font-size: 36px;
+    color: black;
+    text-decoration: none;
 }
 
-.feynman-pic {
+.feinman__link:hover {
+opacity: .5;
+}
+
+.feynman__pic {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -221,70 +228,87 @@ h4 {
 
 .kaufman {
     position: relative;
-    background-color: black;
+    background-color: #1f1f1f;
     padding-top: 90px;
     overflow: hidden;
 }
 
 .kaufman__triangle {
-    width: 777px;
-    height: 777px;
+    width: 877px;
+    height: 877px;
     position: absolute;
     top: 0;
     right: -210px;
     z-index: 0;
     background-image: url(../images/triangle.svg);
+    background-size: contain;
 }
 
 .footer {
+    box-sizing: border-box;
     padding-top: 60px;
     padding-bottom: 40px;
     background-color: #1f1f1f;
+    min-height: 350px;
+    color: white;
 }
 
 .footer__columns {
     display: flex;
     justify-content: space-between;
-    width: 90%;
     margin: auto;
-    color: white;
+    width: 90%;
 }
 
 .footer__columns_content_copyright {
+    min-height: 350px;
+    display: flex;
     flex-basis: 711px;
-    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.footer__column-heading {
+.footer__columns-heading {
     margin-bottom: 20px;
     line-height: 30px;
     font-size: 18px;
 }
 
-.footer__author {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+.footer__author { 
     line-height: 25px;
     font-size: 18px;
 }
 
-.footer__social-icon {
-    display: flex;
-    color: white;
-    line-height: 30px;
-    font-size: 18px;
-}
-
-.footer__social-icon-text {
+.footer__column-link {
     line-height: 30px;
     font-size: 18px;
     color: white;
     text-decoration: none;
 }
 
-.footer__social-icon-pic {
+.footer__column-link:hover {
+    opacity: .5;
+}
+
+.footer__social-icon {
     margin-right: 10px;
+}
+
+/* убираем маркеры у пунктов списка */
+.footer__links-item {
+    list-style-type: none;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.footer__columns-links {
+    padding-left: 0;
+}
+
+/* убираем образовавшиеся отступы */
+.footer__column-links {
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .section-title_theme_dark {
@@ -315,15 +339,3 @@ h4 {
     height: 35px;
 }
 
-/* убираем маркеры у пунктов списка */
-.footer__links-list {
-    list-style-type: none;
-    line-height: 30px;
-    font-size: 18px;
-}
-
-/* убираем образовавшиеся отступы */
-.footer__column-links {
-    margin-left: 0;
-    padding-left: 0;
-}
