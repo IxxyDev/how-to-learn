@@ -155,7 +155,6 @@ p {
     text-align: center;
     line-height: 34px;
     font-size: 24px;
-    font-weight: normal;
 }
 
 .table__cell {
@@ -189,7 +188,6 @@ p {
     margin-bottom: 70px;
     text-align: center;
     font-size: 120px; 
-    text-align: center;
     z-index: 1;
 }
 
@@ -199,7 +197,6 @@ p {
     text-align: center;
     line-height: 51px;;
     font-size: 36px;
-    font-weight: normal;
     z-index: 1;
 }
 
@@ -217,7 +214,7 @@ p {
 opacity: .5;
 }
 
-.feynman__pic {
+.feinman__pic {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -268,7 +265,7 @@ opacity: .5;
     justify-content: space-between;
 }
 
-.footer__columns-heading {
+.footer__column-heading {
     margin-bottom: 20px;
     line-height: 30px;
     font-size: 18px;
