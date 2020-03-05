@@ -1,3 +1,12 @@
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
 .page {
     min-width: 1100px;
     /* мы ещё не умеем делать мобильную версию сайта, */
@@ -17,7 +26,11 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+blockquote,
+cite,
+img,
+a {
     border: 1px solid red;
 }
 */
@@ -45,7 +58,6 @@ p {
 
 .header__title {
     width: 730px;
-    display: flex;
     align-self: center;
     margin-left: 64px;
     line-height: 96px;
@@ -58,7 +70,8 @@ p {
     z-index: 1;
     bottom: 30px;
     left: 64px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 .header__link {
@@ -69,7 +82,6 @@ p {
 .header__link:hover {
     opacity: .5;
 }
-
 
 .header__main-illustration {
     width: 765px;
@@ -90,6 +102,76 @@ p {
     right: 0;
     background-color: #2f80ed;
     margin-top: 64px;
+    transform: rotate(-15deg);
+    overflow: hidden;
+    animation: rotation 20s linear infinite;
+}
+
+.techniques {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    
+}
+
+.cards {
+    width: 920px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    grid-row-gap: 60px;
+    grid-column-gap: 100px;
+    margin: 60px auto 0;
+}
+
+.cards__item {
+    width: 240px;  
+} 
+
+.cards__image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 40px 43px;
+}
+
+.cards__title {
+    line-height: 1.15em;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
+
+.cards__description {
+    text-align: center;
+    line-height: 23px;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.video {
+    margin-top: 100px;
+}
+
+.iframes {
+    width: 1050px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 515px);
+    grid-row-gap: 60px; /* для очередных потенциальных "творений" с TED */
+    grid-column-gap: 20px;
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+}
+
+.iframe {
+    display: block;
+}
+
+.oakley {
+    background-color: #f2f2f2;
+    padding: 160px 0 80px;
+    z-index: -1;
 }
 
 .two-columns {
@@ -128,6 +210,10 @@ p {
 
 .two-columns__span-accent {
     font-weight: bold;
+}
+
+.digits {
+    margin-top: 100px;
 }
 
 .table {
@@ -175,7 +261,6 @@ p {
 /* стойкое ощущение, что размеры в приложенном ТЗ у этого блока приведены неверные */
 .feinman {
     position: relative;
-    margin: 100px auto 0;
     height: 790px;
     background-color: #f2f2f2;
 }
@@ -187,7 +272,7 @@ p {
     width: 648px;
     margin-bottom: 70px;
     text-align: center;
-    font-size: 120px; 
+    font-size: 120px;
     z-index: 1;
 }
 
@@ -208,10 +293,11 @@ p {
     font-size: 36px;
     color: black;
     text-decoration: none;
+    z-index: 1;
 }
 
 .feinman__link:hover {
-opacity: .5;
+    opacity: .5;
 }
 
 .feinman__pic {
@@ -223,11 +309,78 @@ opacity: .5;
     z-index: 0;
 }
 
+.khan {
+    margin-top: 100px;
+    padding-top: 105px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.author {
+    line-height: 42px;
+    font-size: 30px;
+    margin: 0;
+}
+
+.title {
+    line-height: 115%;
+    font-size: 60px;
+}
+
+.quote {
+    width: 790px;
+    margin: 50px 0 36px;
+    line-height: 34px;
+    font-size: 24px;
+}
+
+.quote-author {
+    display: block; /* делаем цитату блоком */
+    margin-bottom: 10px;
+    line-height: 115%;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.quote-author-subline {
+    line-height: 115%;
+    font-size: 24px;
+    font-style: normal;
+}
+
+.book-container {
+    display: flex;
+    margin-top: 68px;
+}
+
+.book-pic {
+    margin-right: 20px;
+    width: 620px;
+    height: 608px;
+    background-size: cover;
+}
+
+.buy-link {
+    line-height: 42px;
+    font-size: 30px; 
+    text-decoration: none;
+    color:#2f80ed;
+}
+
+.buy-link:hover {
+    opacity: .5;
+}
+
 .kaufman {
     position: relative;
     background-color: #1f1f1f;
     padding-top: 90px;
     overflow: hidden;
+    background-size: contain;
 }
 
 .kaufman__triangle {
@@ -238,16 +391,44 @@ opacity: .5;
     right: -210px;
     z-index: 0;
     background-image: url(../images/triangle.svg);
+    animation: rotation 20s linear infinite;
     background-size: contain;
 }
 
+.resources {
+    margin-top: 100px;
+}
+
+.resources__logo-zone {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px auto 0;
+    width: 1100px;
+}
+
+.resources__link {
+    display: block;
+    width: 270px;
+    height: 38px;
+    text-align: center;
+}
+
+.resources__link:hover {
+    opacity: .5;
+}
+
+.resources__logo {
+    width: inherit;
+    height: inherit;
+}
+
 .footer {
-    box-sizing: border-box;
     padding-top: 60px;
     padding-bottom: 40px;
     background-color: #1f1f1f;
     min-height: 350px;
     color: white;
+    margin-top: 217px;
 }
 
 .footer__columns {
@@ -258,7 +439,7 @@ opacity: .5;
 }
 
 .footer__column_content_copyright {
-    min-height: 350px;
+    min-height: 250px;
     display: flex;
     flex-basis: 711px;
     flex-direction: column;
@@ -291,7 +472,6 @@ opacity: .5;
     margin-right: 10px;
 }
 
-/* убираем маркеры у пунктов списка */
 .footer__links-item {
     list-style-type: none;
     line-height: 30px;
@@ -302,7 +482,6 @@ opacity: .5;
     padding-left: 0;
 }
 
-/* убираем образовавшиеся отступы */
 .footer__column-links {
     margin-left: 0;
     padding-left: 0;
@@ -322,7 +501,6 @@ opacity: .5;
     z-index: 1;
 }
 
-/* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
     position: relative;
     width: 200px;
