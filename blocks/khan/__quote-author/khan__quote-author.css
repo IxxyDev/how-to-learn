@@ -1,0 +1,8 @@
+.khan__quote-author {
+    display: block; /* делаем цитату блоком */
+    margin-bottom: 10px;
+    line-height: 115%;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+}
